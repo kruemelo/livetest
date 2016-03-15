@@ -1,0 +1,8 @@
+{
+	"name": "nwlivetest",
+	"main": "index.html",
+	"window": {
+		"title": "nw livetest"
+	},
+	"chromium-args": "--allow-insecure-localhost"
+}

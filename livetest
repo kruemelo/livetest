@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+'use strict';
+
+/**
+ * Module dependencies
+ */
+const program = require('commander');
+const update = require('update-notifier');
+const pkg = require('./package');
+
+// Commands
+const run = require('./lib/run');
+
+// Update notify
+update({pkg}).notify();
+
+program
+  .version(pkg.version)
+  .description('Run livetests in a directory')
+  .option('-t, --path <testdir>', 'Run live tests in a directory, default: "test" - relative to cwd') 
+  .option('-e, --end <fileending>', 'test filename endig, default: ".js"')
+  .on('--help', function() {
+    console.log('  Examples:');
+    console.log();
+    console.log('    $ livetest');
+    console.log('    $ livetest --path=test/specs');
+    console.log('    $ livetest --end=Spec.js');
+    console.log();
+  })
+  .parse(process.argv);
+
+run(program);

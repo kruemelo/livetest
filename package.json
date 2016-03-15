@@ -1,0 +1,33 @@
+{
+  "name": "livetest",
+  "version": "0.0.1",
+  "description": "live testing with nwjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "nw install 0.13.0-rc2 sdk"
+  },
+  "bin": {
+    "livetest": "livetest"
+  },
+  "keywords": [
+    "live",
+    "bdd",
+    "nwjs",
+    "mocha"
+  ],
+  "author": "kruemelo",
+  "license": "MIT",
+  "engines": {
+    "node": ">=5.8.0"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "commander": "^2.9.0",
+    "decache": "^3.0.5",
+    "mocha": "^2.4.5",
+    "nwjs-bf": "^1.3.1",
+    "optimist": "^0.6.1",
+    "update-notifier": "^0.6.2"
+  }
+}
