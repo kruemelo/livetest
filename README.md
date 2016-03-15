@@ -10,8 +10,8 @@ npm i livetest --save-dev
 # Usage
 
 ```bash
-
-$ node livetest -h
+$ livetest
+```
 
 ## Help
 
