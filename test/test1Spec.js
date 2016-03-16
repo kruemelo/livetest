@@ -7,8 +7,6 @@ const hostname = '127.0.0.1';
 const port = 1337;
 var server = null;
 
-console.log('specs at %s', __filename);
-
 function prepareEnv (testWindow, callback) {
 
   function awaitLoaded (loadingDone) {
@@ -48,7 +46,7 @@ describe('test suite', function () {
 
     this.timeout(3000);
 
-    w = thisSuite.ctx.window;
+    w = thisSuite.ctx.getTestWindow();
 
     if (!w) {
       throw new Error('now test window available');
@@ -71,6 +69,7 @@ describe('test suite', function () {
     assert.isObject(thisSuite, 'should have suite');
     assert.isArray(thisSuite.tests, 'should have tests');
     assert.isFunction(thisSuite.ctx.getWindow, 'should have suite getWindow()');
+    assert.isFunction(thisSuite.ctx.getTestWindow, 'should have suite getTestWindow()');
   });
 
   it('should self-test test', function () {
@@ -79,9 +78,10 @@ describe('test suite', function () {
   });
 
   it('should have window context', function (done) {
-    assert(this.test.ctx.window, 'should have ctx.window');
     assert.isFunction(this.test.ctx.getWindow, 'should have ctx.getWindow');
     assert(this.test.ctx.getWindow(), 'should execute ctx.getWindow');
+    assert.isFunction(this.test.ctx.getTestWindow, 'should have ctx.getTestWindow');
+    assert(this.test.ctx.getTestWindow(), 'should execute ctx.getTestWindow');
     done();
   });
   
