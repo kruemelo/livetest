@@ -17,16 +17,12 @@ update({pkg}).notify();
 program
   .version(pkg.version)
   .description('Run livetests in a directory')
-  // .option('-t, --path <testdir>', 'Run live tests in a directory, default: "./test"') 
-  // .option('-e, --end <fileending>', 'test filename endig, default: ".js"')
   .option('-c, --config <filename>', 'test config json file filename')
   .on('--help', function() {
     console.log('  Examples:');
     console.log();
     console.log('    $ livetest');
     console.log('    $ livetest --config=test/config.json');
-    // console.log('    $ livetest --path=test/specs');
-    // console.log('    $ livetest --end=Spec.js');
     console.log();
   })
   .parse(process.argv);

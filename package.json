@@ -1,6 +1,6 @@
 {
   "name": "livetest",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "mocha live testing with nwjs",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,5 @@
     "nwjs-bf": "^1.3.2",
     "optimist": "^0.6.1",
     "update-notifier": "^0.6.2"
-  },
-  "devDependencies": {}
+  }
 }
