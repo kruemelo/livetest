@@ -1,10 +1,10 @@
 {
   "name": "livetest",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "mocha live testing with nwjs",
   "main": "index.js",
   "scripts": {
-    "test": "node livetest --path=./test --end=Spec.js",
+    "test": "node livetest --config=./test/config.json",
     "postinstall": "nw install 0.13.0-rc3 sdk"
   },
   "bin": {
@@ -28,7 +28,7 @@
     "chai": "^3.5.0",
     "commander": "^2.9.0",
     "decache": "^3.0.5",
-    "loca": "^1.0.1",
+    "glob": "^7.0.3",
     "mocha": "^2.4.5",
     "nwjs-bf": "^1.3.2",
     "optimist": "^0.6.1",

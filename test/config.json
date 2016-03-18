@@ -1,0 +1,6 @@
+{
+	"files": [
+		"../test/test1Spec.js",
+		"../test/**/*Spec.js"
+	]
+}
