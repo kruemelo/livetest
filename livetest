@@ -17,7 +17,7 @@ update({pkg}).notify();
 program
   .version(pkg.version)
   .description('Run livetests in a directory')
-  .option('-t, --path <testdir>', 'Run live tests in a directory, default: "test" - relative to cwd') 
+  .option('-t, --path <testdir>', 'Run live tests in a directory, default: "./test"') 
   .option('-e, --end <fileending>', 'test filename endig, default: ".js"')
   .on('--help', function() {
     console.log('  Examples:');

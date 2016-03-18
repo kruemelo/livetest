@@ -3,6 +3,11 @@
   const path = require('path');
   const assert = require('chai').assert;
 
+  console.log(
+    'process.cwd: %s, __dirname: %s, __filename: %s',
+    process.cwd(), __dirname, __filename
+  );
+
   function prepareEnv (testWindow, testPath, callback) {
 
     function awaitLoaded (loadingDone) {
