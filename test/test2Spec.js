@@ -6,12 +6,12 @@
   function prepareEnv (testWindow, testPath, callback) {
 
     function awaitLoaded (loadingDone) {
-      setTimeout(function () {
-        if (testWindow.document.getElementById('text')) {
-          return loadingDone();
+      var intervalID = setInterval(() => {
+        if (testWindow.document && testWindow.document.getElementById('text')) {
+          clearInterval(intervalID);
+          loadingDone();
         }
-        awaitLoaded(loadingDone);
-      }, 500);
+      }, 100);
     }
 
     testWindow.location.assign(`file://${testPath}/test2.html`);
@@ -38,8 +38,7 @@
         throw new Error('now test window available');
       }
 
-      // testPath = path.dirname(thisSuite.file);
-      testPath = thisSuite.ctx.dirname;
+      testPath = path.dirname(thisSuite.ctx.filename);
 
       prepareEnv(w, testPath, done);
     });
