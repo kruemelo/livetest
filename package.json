@@ -1,7 +1,7 @@
 {
   "name": "livetest",
-  "version": "0.0.6",
-  "description": "live testing with nwjs",
+  "version": "0.0.7",
+  "description": "mocha live testing with nwjs",
   "main": "index.js",
   "scripts": {
     "test": "node livetest --path=./test --end=Spec.js",
@@ -14,7 +14,9 @@
     "live",
     "bdd",
     "nwjs",
-    "mocha"
+    "mocha",
+    "chrome",
+    "devtools"
   ],
   "author": "kruemelo",
   "license": "MIT",
