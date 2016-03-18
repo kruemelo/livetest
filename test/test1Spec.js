@@ -1,44 +1,27 @@
 
-const fs = require('fs');
-const http = require('http');
+const path = require('path');
 const assert = require('chai').assert;
 
-const hostname = '127.0.0.1';
-const port = 1337;
-var server = null;
-
-function prepareEnv (testWindow, callback) {
+function prepareEnv (testWindow, testPath, callback) {
 
   function awaitLoaded (loadingDone) {
     setTimeout(function () {
-      if (testWindow && testWindow.document.getElementById('btn-yay')) {
+      if (testWindow && testWindow.document.getElementById('btn-clickme')) {
         return loadingDone();
       }
       awaitLoaded(loadingDone);
     }, 500);
   }
 
-  if (server) {
-    testWindow.location.assign(`http://${hostname}:${port}/`);
-    awaitLoaded(callback);
-  }
-  else {
-    // startup test http server
-    server = http.createServer((req, res) => {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.end(fs.readFileSync('test.html'));
-    }).listen(port, hostname, () => {
-      testWindow.location.assign(`http://${hostname}:${port}/`);
-      awaitLoaded(callback);
-    });
-  }
-
+  testWindow.location.assign(`file://${testPath}/test1.html`);
+  awaitLoaded(callback);
 }
 
 
-describe('test suite', function () {
+describe('test 1 suite', function () {
 
-  var w;
+  var w,
+    testPath;
 
   const thisSuite = this;
 
@@ -52,18 +35,11 @@ describe('test suite', function () {
       throw new Error('now test window available');
     }
 
-    prepareEnv(w, done);
+    testPath = path.dirname(thisSuite.file);
+
+    prepareEnv(w, testPath, done);
   });
 
-  after(function (done) {
-    this.timeout(4000);
-    if (server) {
-      server.close(done);
-    }
-    else {
-      done();
-    }
-  });
 
   it('should self-test suite', function () {
     assert.isObject(thisSuite, 'should have suite');
@@ -91,10 +67,10 @@ describe('test suite', function () {
     }, 100);
   });
 
-  it('should fail', function (done) {
-  	assert.equal('a', 'b');
-    done();
-  });
+  // it('should fail', function (done) {
+  // 	assert.equal('a', 'b');
+  //   done();
+  // });
   
   it.skip('should skip', function (done) {
     done();
@@ -108,9 +84,9 @@ describe('test suite', function () {
       }, 50);
     });
 
-    it('should fail', function (done) {
-      done(new Error('Something bad happened!'));
-    });
+    // it('should fail', function (done) {
+    //   done(new Error('Something bad happened!'));
+    // });
 
     it.skip('should skip', function (done) {
       done();
@@ -118,12 +94,12 @@ describe('test suite', function () {
 
     it('should access test window dom els', function (done) {
 
-      var btn = w.document.getElementById('btn-yay'),
+      var btn = w.document.getElementById('btn-clickme'),
         divResult = w.document.getElementById('result');
 
       btn.click();
 
-      assert.strictEqual(divResult.innerHTML, 'as a result');
+      assert.strictEqual(divResult.innerHTML, 'yay!');
 
       done();
     });

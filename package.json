@@ -4,7 +4,7 @@
   "description": "live testing with nwjs",
   "main": "index.js",
   "scripts": {
-    "test": "node livetest ./test",
+    "test": "node livetest --path=./test --end=Spec.js",
     "postinstall": "nw install 0.13.0-rc3 sdk"
   },
   "bin": {
