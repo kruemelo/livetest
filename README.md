@@ -10,7 +10,13 @@ npm i livetest --save-dev
 # Usage
 
 ```bash
-$ livetest
+$ node livetest --config=./test/config.json
+```
+
+# Test
+
+```bash
+$ npm test 
 ```
 
 ## Help
@@ -25,15 +31,24 @@ $ livetest -h
 
     -h, --help              output usage information
     -V, --version           output the version number
-    -t, --path <testdir>    Run live tests in a directory, default: "test" - relative to cwd
-    -e, --end <fileending>  test filename ending, default: ".js"
+    -c, --config <testdir>  test config filename, default: ./test/config.json
 
   Examples:
 
     $ livetest
-    $ livetest --path=test/specs
-    $ livetest --end=Spec.js
+    $ livetest --config=./test/config.json
 
+```
+
+## Config file
+
+```
+{
+  "files": [
+    "test/test1Spec.js",
+    "./test/**/*Spec.js"
+  ]
+}
 ```
 
 ## License
