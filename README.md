@@ -1,19 +1,19 @@
 
 run mocha tests in nwjs window
 
-# Install
+## Install
 
 ```bash
 npm i livetest --save-dev
 ```
 
-# Usage
+## Usage
 
 ```bash
 $ node livetest --config=./test/config.json
 ```
 
-# Test
+## Test
 
 ```bash
 $ npm test 

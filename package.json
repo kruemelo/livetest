@@ -1,14 +1,18 @@
 {
   "name": "livetest",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "mocha live testing with nwjs",
   "main": "index.js",
   "scripts": {
     "test": "node livetest --config=./test/config.json",
-    "postinstall": "nw install 0.13.0-rc3 sdk"
+    "postinstall": "nw install 0.13.2 sdk"
   },
   "bin": {
     "livetest": "livetest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kruemelo/livetest.git"
   },
   "keywords": [
     "live",
