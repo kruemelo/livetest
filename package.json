@@ -1,11 +1,11 @@
 {
   "name": "livetest",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "mocha live testing with nwjs",
   "main": "index.js",
   "scripts": {
     "test": "node livetest --config=./test/config.json",
-    "postinstall": "nw install 0.13.4 sdk"
+    "postinstall": "nw install 0.14.2 sdk"
   },
   "bin": {
     "livetest": "livetest"
@@ -36,6 +36,6 @@
     "mocha": "^2.4.5",
     "nwjs-bf": "^1.3.2",
     "optimist": "^0.6.1",
-    "update-notifier": "^0.6.2"
+    "update-notifier": "^0.6.3"
   }
 }
