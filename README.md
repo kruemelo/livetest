@@ -1,6 +1,8 @@
 
 run mocha tests in nwjs window
 
+current version installs nwjs 0.14.5 sdk
+
 ## Install
 
 ```bash

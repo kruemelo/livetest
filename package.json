@@ -1,11 +1,11 @@
 {
   "name": "livetest",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "mocha live testing with nwjs",
   "main": "index.js",
   "scripts": {
     "test": "node livetest --config=./test/config.json",
-    "postinstall": "nw install 0.14.2 sdk"
+    "postinstall": "nw install 0.14.5 sdk"
   },
   "bin": {
     "livetest": "livetest"
