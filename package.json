@@ -1,11 +1,10 @@
 {
   "name": "livetest",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "mocha live testing with nwjs",
   "main": "index.js",
   "scripts": {
-    "test": "node livetest --config=./test/config.json",
-    "postinstall": "nw install 0.14.5 sdk"
+    "test": "node livetest --config=./test/config.json --user-data-dir=livetest-self"
   },
   "bin": {
     "livetest": "livetest"
@@ -31,11 +30,11 @@
     "async": "^1.5.2",
     "chai": "^3.5.0",
     "commander": "^2.9.0",
+    "debug": "^2.2.0",
     "decache": "^3.0.5",
     "glob": "^7.0.3",
     "mocha": "^2.4.5",
-    "nwjs-bf": "^1.3.2",
-    "optimist": "^0.6.1",
+    "nw": "0.15.0-rc2sdk",
     "update-notifier": "^0.6.3"
   }
 }

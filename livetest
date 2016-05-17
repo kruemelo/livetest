@@ -18,11 +18,13 @@ program
   .version(pkg.version)
   .description('Run livetests in a directory')
   .option('-c, --config <filename>', 'test config json file filename')
+  .option('-u, --user-data-dir <userDataDir>', 'user data path, nw.App.dataPath')
   .on('--help', function() {
     console.log('  Examples:');
     console.log();
     console.log('    $ livetest');
     console.log('    $ livetest --config=test/config.json');
+    console.log('    $ livetest -user-data-dir=/tmp/user1 --config=test/config.json');
     console.log();
   })
   .parse(process.argv);

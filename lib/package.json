@@ -2,7 +2,7 @@
 	"name": "nwlivetest",
 	"main": "index.html",
 	"window": {
-		"title": "nw livetest"
+		"title": "nwlivetest"
 	},
 	"chromium-args": "--allow-insecure-localhost"
 }
