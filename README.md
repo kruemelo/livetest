@@ -15,6 +15,13 @@ npm i livetest --save-dev
 $ node livetest --config=./test/config.json
 ```
 
+If you want to run multiple instances, add the `--user-data-dir` option to start nw with different profiles:
+
+```bash
+$ node livetest --user-data-dir=first-profile & 
+$ node livetest --user-data-dir=second-profile
+```
+
 ## Test
 
 ```bash
