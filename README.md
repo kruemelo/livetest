@@ -1,7 +1,7 @@
 
 run mocha tests in nwjs window
 
-current version installs nwjs 0.15.2 sdk
+current version installs nwjs 0.16.1 sdk
 
 ## Install
 
