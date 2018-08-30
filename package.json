@@ -27,14 +27,13 @@
     "node": ">=8.9.4"
   },
   "dependencies": {
-    "async": "^1.5.2",
-    "chai": "^3.5.0",
+    "async": "^2.6.1",
+    "chai": "^4.1.2",
     "commander": "^2.9.0",
-    "debug": "^2.2.0",
-    "decache": "^3.0.5",
+    "debug": "^3.1.0",
     "glob": "^7.0.3",
-    "mocha": "^2.4.5",
+    "mocha": "^5.2.0",
     "nw": "0.32.4sdk",
-    "update-notifier": "^0.6.3"
+    "update-notifier": "^2.5.0"
   }
 }
