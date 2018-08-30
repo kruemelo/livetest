@@ -1,8 +1,8 @@
 {
   "name": "livetest",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "mocha live testing with nwjs",
-  "main": "index.js",
+  "main": "lib/run.js",
   "scripts": {
     "test": "node livetest --config=./test/config.json --user-data-dir=livetest-self"
   },
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/kruemelo/livetest.git"
   },
   "keywords": [
-    "live",
+    "test",
     "bdd",
     "nwjs",
     "mocha",
@@ -24,7 +24,7 @@
   "author": "kruemelo",
   "license": "MIT",
   "engines": {
-    "node": ">=5.8.0"
+    "node": ">=8.9.4"
   },
   "dependencies": {
     "async": "^1.5.2",
@@ -34,7 +34,7 @@
     "decache": "^3.0.5",
     "glob": "^7.0.3",
     "mocha": "^2.4.5",
-    "nw": "0.16.1sdk",
+    "nw": "0.32.4sdk",
     "update-notifier": "^0.6.3"
   }
 }

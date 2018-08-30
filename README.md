@@ -1,7 +1,7 @@
 
 run mocha tests in nwjs window
 
-current version installs nwjs 0.16.1 sdk
+current version installs nwjs 0.32.4 sdk
 
 ## Install
 
@@ -13,19 +13,20 @@ npm i livetest --save-dev
 
 ```bash
 $ node livetest --config=./test/config.json
+$ node node_modules/.bin/livetest
 ```
 
 If you want to run multiple instances, add the `--user-data-dir` option to start nw with different profiles:
 
 ```bash
-$ node livetest --user-data-dir=first-profile & 
+$ node livetest --user-data-dir=first-profile &
 $ node livetest --user-data-dir=second-profile
 ```
 
 ## Test
 
 ```bash
-$ npm test 
+$ npm test
 ```
 
 ## Help
